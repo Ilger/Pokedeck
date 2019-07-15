@@ -1,31 +1,26 @@
 
 
 
-debugger; 
 const pokeApi = 'https://pokeapi.co/';
+let pokemon = 12;
+let apilink = `https://pokeapi.co/api/v2/pokemon/butterfree`;
 
-const forecastContainer = document.getElementById('forecast-container');
 
-const container = document.createElement('div')
-container.setAttribute('class', 'container')
+console.log(apilink);
 
-forecastContainer.appendChild(container);
-
-console.log(`https://pokeapi.co/`);
 // Make a request for a user with a given ID
-debugger;
-axios.get(`https://pokeapi.co/`)
+axios.get(apilink)
   .then(function (response) {
-    debugger;
     // handle success
    console.log(response);
+   console.log('het is gelukt');
   })
   .catch(function (error) {
-    debugger;
     // handle error
+    console.log('het is niet gelukt');
     console.log(error);
   })
   .finally(function () {
-    debugger; 
     // always executed
+    console.log('wordt sowieso uitgevoerd');
   });
