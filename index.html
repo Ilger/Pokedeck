@@ -9,7 +9,7 @@
     <title>Pokedex</title>
 
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css"> -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Carter+One|Lalezar|Righteous&display=swap" rel="stylesheet"> 
@@ -22,18 +22,36 @@
 
 <body>
 
-    <section class="pokedex section">
-
-        <section class="search">
-            <span>Pokedex</span> <input class="input" type="text" placeholder="Butterfree"><input class="button"
-                type="button" value="Search">
+    <section class="pokedex collums">
+        
+        <h1 class="title is-1 collum">Pokedex</h1> 
+   
+       
+        <section class="search collum">
+                <input class="input" type="text" placeholder="New search?"> 
         </section>
+
+        <div class="sprite"></div>
+
+        <ul class="move">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+
+        <div class="evolution"></div>
+
 
     </section>
 
     <!-- axios to get and parse at the same time -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <!-- <script src="master.js"></script> -->
+    <script src="master.js"></script>
 </body>
 
 </html>
