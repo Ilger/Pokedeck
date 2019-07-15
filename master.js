@@ -2,9 +2,7 @@
 
 
 debugger; 
-const apiKey = '0859cc855f463308434e640ef36c8314';
-const apiLinkForcast = 'api.openweathermap.org/data/2.5/forecast?q=';
-let city = 'London,uk';
+const pokeApi = 'https://pokeapi.co/';
 
 const forecastContainer = document.getElementById('forecast-container');
 
@@ -13,11 +11,10 @@ container.setAttribute('class', 'container')
 
 forecastContainer.appendChild(container);
 
-// axios.get(`https://${apiLinkForcast}${city}&APPID=${apiKey}`).then(response => console.log(response));
-console.log(`https://${apiLinkForcast}${city}&APPID=${apiKey}`);
+console.log(`https://pokeapi.co/`);
 // Make a request for a user with a given ID
 debugger;
-axios.get(`https://${apiLinkForcast}${city}&APPID=${apiKey}`)
+axios.get(`https://pokeapi.co/`)
   .then(function (response) {
     debugger;
     // handle success
