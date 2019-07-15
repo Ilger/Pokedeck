@@ -7,19 +7,26 @@
     padding: 0;
     box-sizing: border-box;
 }
+body {
+    background: url(./img/pokemonachtergrond.jpg);
+}
 
 .pokedex {
     width: 900px;
     height: 800px;
     margin: 100px auto;
     padding: 50px;
-    background-color: var(--main-bg-color);
+    background: url(./img/pockedex.png) top left no-repeat;
+    /* background-color: var(--main-bg-color); */
     border-radius: 10px;
+    margin-left: 400px;
 }
 
 h1 {
-    color: #f2f2f2 !important;
+    color: white !important;
     font-family: 'Lalezar', cursive;
+    margin-left: 180px;
+    margin-top: 10px;
 }
 h1:hover {
     text-shadow:2px 2px 8px aquamarine !important;
@@ -31,14 +38,14 @@ h1:hover {
 
 .input {
     background-color: #FF7045;
-    color: #fff;
+    color: black;
     border: none
 }
 
 .input:hover,
 .input:focus {
-    box-shadow: 0 0 4px 10px aquamarine;
-    text-shadow: 1px 1px 0.002      px aquamarine !important;
+    box-shadow: 0 0 10px 5px aquamarine;
+    text-shadow: 1px 1px 0.00002px aquamarine !important;
 
 .move {
     display: flex;
