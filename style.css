@@ -19,6 +19,7 @@
 
 h1 {
     color: #f2f2f2 !important;
+    font-family: 'Lalezar', cursive;
 }
 h1:hover {
     text-shadow:2px 2px 8px aquamarine !important;
