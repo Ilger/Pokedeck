@@ -1,15 +1,11 @@
 
 
+const name = document.getElementsByName('name-id')[0];
 const sprite = document.getElementsByName('sprite')[0];
 const move = document.getElementsByName('moves')[0];
 const evolution = document.getElementsByName('evolution')[0];
 
-console.log(document.getElementsByName('moves'));
-console.log(sprite, move, evolution);
-console.log(move);
-console.log(evolution);
 const lookingForPokemon = document.getElementById("pokemonChoosen");
-// document.getElementsByClassName('input');
 let response;
 
 
@@ -20,8 +16,7 @@ lookingForPokemon.addEventListener('keypress', function (enter) {
   if (key === 13) { // 13 is enter
 
     // code for enter
-    // apiCall();
-    postInfo();
+    apiCall();
   }
 });
 
@@ -30,16 +25,13 @@ lookingForPokemon.addEventListener('keypress', function (enter) {
 // gets data
 // parses json to arry
 function apiCall(params) {
-fetch('https://pokeapi.co/api/v2/pokemon/4')
+  fetch('https://pokeapi.co/api/v2/pokemon/charmander')
   .then(function(response) {
     console.log('json');
     return response.json();
   })
   .then(function(myJson) {
-    console.log('response json');
-
-    console.log(JSON.stringify(myJson));
-    console.log('myJson');
+    console.log('https://pokeapi.co/api/v2/pokemon/charmander');
     console.log(myJson);
     postInfo(myJson)
   });
@@ -52,13 +44,19 @@ fetch('https://pokeapi.co/api/v2/pokemon/4')
 // An image (sprite)
 // At least 4 "moves"
 // The previous evolution, only if it exists, along with their name and image
-function postInfo() {
+function postInfo(myJson) {
+  let pokemonName = myJson.name;
+  let pokemonId = myJson.id;
+  let pokemonFoto = myJson.sprites.front_default;
+  let pokemonMove = myJson.moves
+  // let prevPokemonEvo = myJson 
 
-  sprite.innerHTML = "foto";
+  name.innerHTML = `<h2>${pokemonName} #${pokemonId}</h2>`;
+  sprite.innerHTML = `<img src="${pokemonFoto}" alt="the front of ${pokemonName}">`
+  
+  console.log(pokemonMove);
   for  (let i = 0; i < move.childElementCount; i++) {
-    move.children[i].innerText = `move${(i + 1)}`;
-    console.log(move.childElementCount);
-    console.log(i);
+    move.children[i].innerText = `${pokemonMove[i].move.name}`;
   }
   evolution.innerHTML = 'first evo';
 
@@ -69,20 +67,5 @@ function postInfo() {
 
 
 
-// console.log(apilink);
-
-// Make a request for a user with a given ID
-// function apiCall(params) {
-//   let pokemon = lookingForPokemon.value;
-//   let apilink = `https://pokeapi.co/api/v2/pokemon/${pokemon}`;
-
-//   let  = new XMLHttpRequest();
-//   pokedex.addEventListener("load", () => {
-//     alert(pokedex.responseText)
-//   });
-//   pokedex.open("GET", "https://en.pokedexpedia.org/w/api.php?action=query&format=json&list=search&utf8=1&srsearch=Albert+Einstein");
-//   pokedex.send();
-
-// }
 
 
