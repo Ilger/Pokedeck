@@ -36,7 +36,10 @@ h1:hover {
     font-size: 1.75em;
 }
 
-.input {
+.input { 
+    margin-left: 60%;
+    height: 15%;
+    width: 20%;
     background-color: #FF7045;
     color: black;
     border: none
