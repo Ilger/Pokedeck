@@ -1,26 +1,75 @@
 
 
 
-const pokeApi = 'https://pokeapi.co/';
-let pokemon = 12;
-let apilink = `https://pokeapi.co/api/v2/pokemon/butterfree`;
+const lookingForPokemon = document.getElementById("pokemonChoosen");
+// document.getElementsByClassName('input');
+let response;
 
 
-console.log(apilink);
+// eventlistner on keypress
+// use input to make api call
+lookingForPokemon.addEventListener('keypress', function (enter) {
+  var key = enter.which || enter.keyCode;
+  if (key === 13) { // 13 is enter
+    
+    // code for enter
+    console.log('enter pressed');
+    apiCall();
+    console.log('response:');
+    console.log(response);
+  }
+});
+
+
+// api call
+// gets data
+// parses json to arry
+function apiCall(params) {
+fetch('https://pokeapi.co/api/v2/pokemon/4')
+  .then(function(response) {
+    console.log('json');
+    console.log(response);
+    return response.json();
+  })
+  .then(function(myJson) {
+    console.log('response json');
+    
+    console.log(JSON.stringify(myJson));
+    console.log('myJson');
+    console.log(myJson);
+  });
+
+}
+
+
+
+
+// post api data:
+// The ID-number
+// An image (sprite)
+// At least 4 "moves"
+// The previous evolution, only if it exists, along with their name and image
+
+
+
+
+
+
+
+// console.log(apilink);
 
 // Make a request for a user with a given ID
-axios.get(apilink)
-  .then(function (response) {
-    // handle success
-   console.log(response);
-   console.log('het is gelukt');
-  })
-  .catch(function (error) {
-    // handle error
-    console.log('het is niet gelukt');
-    console.log(error);
-  })
-  .finally(function () {
-    // always executed
-    console.log('wordt sowieso uitgevoerd');
-  });
+// function apiCall(params) {
+//   let pokemon = lookingForPokemon.value;
+//   let apilink = `https://pokeapi.co/api/v2/pokemon/${pokemon}`;
+  
+//   let  = new XMLHttpRequest();
+//   pokedex.addEventListener("load", () => {
+//     alert(pokedex.responseText)
+//   });
+//   pokedex.open("GET", "https://en.pokedexpedia.org/w/api.php?action=query&format=json&list=search&utf8=1&srsearch=Albert+Einstein");
+//   pokedex.send();
+  
+// }
+
+
